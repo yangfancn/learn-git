@@ -1,3 +1,7 @@
-Practise git actions
+Practise git actions !
+
+insert in center
 
 add somethings
+
+Git is a free software
