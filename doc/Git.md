@@ -126,7 +126,7 @@ git commit -m "本次提交说明"
 
  ## 分支管理
  
- ```
+ ``` shell
 # 创建分支 dev
 git branch dev
 # 切换分支
@@ -135,3 +135,24 @@ git checkout dev
 git checkout -b dev
 # 查看当前分支
 git branch
+# 合并分支到主分支
+git checkout master
+git merge dev
+# 删除分支
+git branch -d dev
+# 由于 checkout 切换分支 和撤销文件修改 checkout -- <file> 容易混淆，新版本的给git 提供了 swith 命令来切换分支
+# 切换到新分支
+git switch -c dev
+# 切换到已有分支
+git switch master
+```
+
+### 解决冲突
+当在两个分支中修改了统一文件同一位置，在提交两个分支之后执行合并分支，会报错并提示冲突，此时需要手动合并分支之后在提交，使用  `git status` 可以查看冲突文件，文件中冲突位置会用 `<<<<<<<`, `=======`, `>>>>>>>` 标记
+
+
+默认合并分支的情况下会尽可能使用 `fast forward` 模式，在这种模式下，删除分支，会丢掉分支信息。如果强制禁用改模式 `--no-ff`， git 在 merger 时生成一个新的commit，这样就可以在分支历史上看出分支信息
+> 此模式会产生新的 commit， 所以需要加 `-m "<description>"`
+
+### 分支策略
+`master` 应该作为稳定版本，在开发不要直接在master上工作，都应该在 `dev` 分支上干活,然后团队成员都在 `dev` 分支上干活，每个人都有自己的分支，在提交到 `dev` 分支上

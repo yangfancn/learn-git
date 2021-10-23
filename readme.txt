@@ -11,3 +11,5 @@ master add smomethings &
 dev add somethings &
 
 --no-ff
+
+test no commit
