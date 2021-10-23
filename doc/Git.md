@@ -110,3 +110,28 @@ git commit -m "本次提交说明"
 `git push -u origin master`
 
 第一次推送内容时加了 `-u` 参数，git 会把本地 master 分支内容推送到远程仓库上的新 master 分支，并且还会把两个分支关联起来，以后的推送命令就可以简化为 `git push`
+
+### 解除与远程库的关联
+添加库时写错地址或者想删除远程库
+
+`git remote rm <name>` ,删除之前可以使用 `git remote -v` 查看远程库信息
+ 
+ 然后根据远程库信息删除 `git remote rm origin`
+
+ > 此操作仅仅是接触本地与远程库的关联，并不是删除，真正的删除需要在 github 上操作
+
+ ### 从远程库上克隆
+ `git clone git@github.com:yangfancn/gitPractise.git`
+
+
+ ## 分支管理
+ 
+ ```
+# 创建分支 dev
+git branch dev
+# 切换分支
+git checkout dev
+# 创建并切换
+git checkout -b dev
+# 查看当前分支
+git branch
