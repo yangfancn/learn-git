@@ -8,4 +8,4 @@ Git is a free software distributed under the GPL
 
 master add smomethings &
 
-dev add somethings
+dev add somethings &
