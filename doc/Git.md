@@ -95,3 +95,18 @@ git commit -m "本次提交说明"
 2. 误删除 使用 `git checkout -- <file>` 撤销删除
 
 > 必须是已经 add 到暂存区获取已经提交到版本库的文件才可以撤销删除
+
+
+## 远程仓库
+在 github 创建一个远程仓库
+
+同步本地代码到远程仓库
+
+`git remote add origin git@github.com:yangfancn/gitPractise.git`
+
+`origin` 是远程仓库的名字，可以自定义， `yangfancn` 是你的github账户, `gitPractise.git` 是仓库地址
+
+### 推送内容到远程仓库
+`git push -u origin master`
+
+第一次推送内容时加了 `-u` 参数，git 会把本地 master 分支内容推送到远程仓库上的新 master 分支，并且还会把两个分支关联起来，以后的推送命令就可以简化为 `git push`
