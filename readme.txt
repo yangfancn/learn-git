@@ -6,6 +6,6 @@ add somethings
 
 Git is a free software distributed under the GPL
 
-master add smomethings
+master add smomethings &
 
 dev add somethings
